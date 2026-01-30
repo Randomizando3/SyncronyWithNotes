@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SyncronyWithNotes.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Shell="http://schemas.microsoft.com/dotnet/2021/maui/shell"
+    Shell.NavBarIsVisible="False"
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="#111">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="12" RowSpacing="10">
+
+        <!-- ===== Top bar: Música + Velocidade + Play/Stop ===== -->
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto,*,Auto,Auto,Auto,Auto"
+              ColumnSpacing="10"
+              VerticalOptions="Center">
+
+            <Label Text="Música:" TextColor="White" VerticalOptions="Center"/>
+
+            <Picker x:Name="SongPicker"
+                    Grid.Column="1"
+                    Title="Escolha uma música"
+                    TextColor="White"
+                    BackgroundColor="#1a1a1a"
+                    SelectedIndexChanged="SongPicker_SelectedIndexChanged"/>
+
+            <Label Grid.Column="2" Text="Velocidade:" TextColor="White" VerticalOptions="Center"/>
+
+            <Picker x:Name="SpeedPicker"
+                    Grid.Column="3"
+                    Title="1.0x"
+                    WidthRequest="120"
+                    TextColor="White"
+                    BackgroundColor="#1a1a1a"
+                    SelectedIndexChanged="SpeedPicker_SelectedIndexChanged"/>
+
+            <Button x:Name="PlayButton"
+                    Grid.Column="4"
+                    Text="Play"
+                    CornerRadius="10"
+                    Clicked="PlayButton_Clicked"/>
+
+            <Button x:Name="StopButton"
+                    Grid.Column="5"
+                    Text="Stop"
+                    CornerRadius="10"
+                    IsEnabled="False"
+                    Clicked="StopButton_Clicked"/>
+        </Grid>
+
+        <!-- ===== Área do jogo ===== -->
+        <Grid x:Name="PlayRoot"
+              Grid.Row="1"
+              BackgroundColor="#222"
+              RowDefinitions="*,Auto"
+              ColumnDefinitions="*,*,*,*,*,*,*">
+
+            <!-- Fundo / pistas -->
+            <Grid x:Name="LanesLayer"
+                  Grid.Row="0"
+                  Grid.ColumnSpan="7"
+                  ColumnDefinitions="*,*,*,*,*,*,*"
+                  BackgroundColor="#222" />
+
+            <!-- Notas caindo -->
+            <AbsoluteLayout x:Name="NotesLayer"
+                            Grid.Row="0"
+                            Grid.ColumnSpan="7"
+                            BackgroundColor="Transparent" />
+
+            <!-- Zona de acerto -->
+            <Grid x:Name="HitPads"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="7"
+                  ColumnDefinitions="*,*,*,*,*,*,*"
+                  ColumnSpacing="6"
+                  Padding="6"
+                  BackgroundColor="#1a1a1a">
+
+                <Button Grid.Column="0" Text="C" BackgroundColor="#FF3B30" TextColor="White" CornerRadius="10" HeightRequest="54" Clicked="Pad0"/>
+                <Button Grid.Column="1" Text="D" BackgroundColor="#FF9500" TextColor="White" CornerRadius="10" HeightRequest="54" Clicked="Pad1"/>
+                <Button Grid.Column="2" Text="E" BackgroundColor="#FFCC00" TextColor="Black" CornerRadius="10" HeightRequest="54" Clicked="Pad2"/>
+                <Button Grid.Column="3" Text="F" BackgroundColor="#34C759" TextColor="White" CornerRadius="10" HeightRequest="54" Clicked="Pad3"/>
+                <Button Grid.Column="4" Text="G" BackgroundColor="#00C7BE" TextColor="White" CornerRadius="10" HeightRequest="54" Clicked="Pad4"/>
+                <Button Grid.Column="5" Text="A" BackgroundColor="#007AFF" TextColor="White" CornerRadius="10" HeightRequest="54" Clicked="Pad5"/>
+                <Button Grid.Column="6" Text="B" BackgroundColor="#AF52DE" TextColor="White" CornerRadius="10" HeightRequest="54" Clicked="Pad6"/>
+            </Grid>
+
+        </Grid>
+
+        <!-- Rodapé vazio (reservado) -->
+        <Grid Grid.Row="2" HeightRequest="0"/>
+    </Grid>
+</ContentPage>

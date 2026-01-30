@@ -1,0 +1,114 @@
+# ===============================
+# Visual Studio / Rider / VSCode
+# ===============================
+.vs/
+.vscode/
+.idea/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ===============================
+# Build outputs
+# ===============================
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+arm/
+arm64/
+
+# ===============================
+# .NET / MSBuild
+# ===============================
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.tlog
+*.ilk
+*.rsp
+
+# ===============================
+# NuGet
+# ===============================
+packages/
+.nuget/
+*.nupkg
+*.snupkg
+.nuget.props
+.nuget.targets
+
+# ===============================
+# MAUI / Xamarin / Android / iOS
+# ===============================
+# Android
+*.keystore
+*.jks
+*.apk
+*.aab
+local.properties
+
+# iOS / MacCatalyst
+*.app
+*.ipa
+*.dSYM/
+*.xcarchive/
+*.mobileprovision
+
+# MAUI generated
+Resources/**/obj/
+Resources/**/bin/
+
+# ===============================
+# SQLite / Local DB
+# ===============================
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# ===============================
+# User / OS files
+# ===============================
+Thumbs.db
+.DS_Store
+ehthumbs.db
+Desktop.ini
+
+# ===============================
+# Logs
+# ===============================
+*.log
+logs/
+crashlogs/
+
+# ===============================
+# Secrets / Environment
+# ===============================
+.env
+.env.*
+appsettings.Development.json
+appsettings.Local.json
+
+# ===============================
+# Temporary / Backup
+# ===============================
+*.tmp
+*.bak
+*.old
+*.orig
+*.swp
+
+# ===============================
+# Publish
+# ===============================
+publish/
+artifacts/
