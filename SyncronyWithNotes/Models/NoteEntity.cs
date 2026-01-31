@@ -2,7 +2,7 @@
 
 namespace SyncronyWithNotes.Models;
 
-public class NoteEntity
+public sealed class NoteEntity
 {
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
@@ -10,8 +10,10 @@ public class NoteEntity
     [Indexed]
     public int SongId { get; set; }
 
-    public int TimeMs { get; set; }
-
-    // 0..6 => C D E F G A B
+    // 0..6 = C..B
     public int Lane { get; set; }
+
+    // tempo em ms dentro da música
+    [Indexed]
+    public int TimeMs { get; set; }
 }

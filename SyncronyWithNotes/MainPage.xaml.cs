@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Layouts;
 using SyncronyWithNotes.Data;
 using SyncronyWithNotes.Models;
@@ -80,9 +81,10 @@ public partial class MainPage : ContentPage
         SongPicker.ItemsSource = _songs;
         SongPicker.ItemDisplayBinding = new Binding(nameof(SongEntity.Title));
 
-        // Speed picker
+        // ✅ Speed picker
         SpeedPicker.ItemsSource = _speeds.Select(s => $"{s:0.##}x").ToList();
         SpeedPicker.SelectedIndex = 0; // 1.0x
+        _speed = _speeds[0];
 
         if (_songs.Count > 0)
         {
@@ -114,7 +116,7 @@ public partial class MainPage : ContentPage
         StopButton.IsEnabled = isPlaying;
 
         SongPicker.IsEnabled = !isPlaying;
-        SpeedPicker.IsEnabled = !isPlaying; // ✅ velocidade só altera antes de dar Play
+        SpeedPicker.IsEnabled = !isPlaying; // velocidade só altera antes de dar Play
     }
 
     private void Start()
@@ -182,7 +184,7 @@ public partial class MainPage : ContentPage
             double y = progress * _hitY;
             a.View.TranslationY = y;
 
-            // toca automático quando chega no final
+            // ✅ toca automático quando chega no final
             if (!a.Played && progress >= 1.0)
             {
                 a.Played = true;
@@ -196,7 +198,7 @@ public partial class MainPage : ContentPage
             }
         }
 
-        // encerra ao final (escala já está no now)
+        // encerra ao final
         if (now > _song.DurationMs + 1000)
             Stop();
     }
@@ -274,8 +276,9 @@ public partial class MainPage : ContentPage
             .OrderBy(n => Math.Abs(n.Note.TimeMs - now))
             .FirstOrDefault();
 
-        // som ao apertar
-        _ = _audio.PlayLaneAsync(lane);
+        // ✅ Se você quer SOMENTE automático, NÃO toca ao apertar.
+        // Se quiser tocar também ao apertar, descomente:
+        // _ = _audio.PlayLaneAsync(lane);
 
         if (best is null)
             return;
