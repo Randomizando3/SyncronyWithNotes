@@ -1,7 +1,7 @@
 # SyncronyWithNotes
 
 ## English
-SyncronyWithNotes is a .NET MAUI app centered on rhythm interaction, music selection, falling notes, and local data used to support the gameplay flow.
+.NET MAUI app centered on rhythm interaction, music selection, falling notes, and local data used to support gameplay.
 
 ### Features identified
 - Song selection
@@ -18,26 +18,26 @@ SyncronyWithNotes is a .NET MAUI app centered on rhythm interaction, music selec
 
 ### Run locally
 1. Open `SyncronyWithNotes/SyncronyWithNotes.sln` in Visual Studio 2022.
-2. Make sure the .NET MAUI workload is installed.
+2. Install the .NET MAUI workload.
 3. Restore packages and run on the selected platform.
 
-## PortuguÃªs
-SyncronyWithNotes Ã© um app em .NET MAUI focado em interaÃ§Ã£o rÃ­tmica, seleÃ§Ã£o de mÃºsicas, notas em queda e dados locais que apoiam o fluxo de jogabilidade.
+## Português
+App em .NET MAUI focado em interação rítmica, seleção de músicas, notas em queda e dados locais usados para apoiar a jogabilidade.
 
 ### Funcionalidades identificadas
-- SeleÃ§Ã£o de mÃºsica
+- Seleção de música
 - Controle de velocidade
 - Pistas com notas em queda
-- InteraÃ§Ã£o com a zona de acerto
-- PersistÃªncia local de mÃºsicas e notas
+- Interação com a zona de acerto
+- Persistência local de músicas e notas
 
 ### Estrutura do projeto
 - `MainPage.xaml`: interface principal de jogo
-- `Models`: entidades de mÃºsicas e notas
-- `Data/AppDatabase.cs`: camada de persistÃªncia local
-- `Services`: Ã¡udio, seed de mÃºsicas e serviÃ§os de apoio
+- `Models`: entidades de músicas e notas
+- `Data/AppDatabase.cs`: camada de persistência local
+- `Services`: áudio, seed de músicas e serviços de apoio
 
 ### Executando localmente
 1. Abra `SyncronyWithNotes/SyncronyWithNotes.sln` no Visual Studio 2022.
-2. Garanta que o workload do .NET MAUI esteja instalado.
+2. Instale o workload do .NET MAUI.
 3. Restaure os pacotes e execute na plataforma escolhida.
